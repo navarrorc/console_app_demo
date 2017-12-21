@@ -8,6 +8,11 @@ namespace console_demo_app
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            var player = '\u263A'; // white smiley face
+            //var player = "☺";
+            //var player = (char)2;
             var redo = 0;
             var left = Console.BufferWidth / 2;
             var top = 10;
@@ -17,7 +22,7 @@ namespace console_demo_app
             Console.SetCursorPosition(0, 0);
             Console.Write($"top: {top}\nleft:{left}\nbufferHeight: {Console.BufferHeight}\nbufferWidth:{Console.BufferWidth}");
             Console.SetCursorPosition(left, 10);
-            Console.Write($"X");
+            Console.Write(player);
 
             Console.CursorVisible = false;
 
@@ -43,7 +48,7 @@ namespace console_demo_app
                             left = Console.BufferWidth - 1;
                             Console.SetCursorPosition(left, top);
                         }
-                        Console.Write($"X");
+                        Console.Write(player);
                         break;
                     case ConsoleKey.LeftArrow:
                         left--;
@@ -62,7 +67,7 @@ namespace console_demo_app
                             Console.Write($"top: {top}\nleft:{left}");
                             Console.SetCursorPosition(left, top);
                         }
-                        Console.Write($"X");
+                        Console.Write(player);
                         break;
                     case ConsoleKey.UpArrow:
                         top--;
@@ -81,7 +86,7 @@ namespace console_demo_app
                             Console.SetCursorPosition(left, top);
                         }
                         Console.SetCursorPosition(left, top);
-                        Console.Write($"X");
+                        Console.Write(player);
                         break;
                     case ConsoleKey.DownArrow:
                         top++;
@@ -91,7 +96,7 @@ namespace console_demo_app
                             Console.SetCursorPosition(0, 0);
                             Console.Write($"top: {top}\nleft:{left}");
                             Console.SetCursorPosition(left, top);
-                            Console.Write($"X");
+                            Console.Write(player);
                         }
                         else
                         {
@@ -99,7 +104,7 @@ namespace console_demo_app
                             Console.SetCursorPosition(0, 0);
                             Console.Write($"top: {top}\nleft:{left}");
                             Console.SetCursorPosition(left, top);
-                            Console.Write($"X");
+                            Console.Write(player);
                         }
 
                         break;
